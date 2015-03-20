@@ -1,6 +1,7 @@
 $(function(){
 
 	var currentText='';
+	var recordText='';
 	var operator='';
 	var preText='';
 
@@ -57,41 +58,49 @@ $(function(){
 	//運算符號
 
 	$('#btnDiv').on('click',function(){
+		if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
+			preCalculate();
+		}
 		operator = '÷';
 		update();
 	 })
 
 	$('#btnMult').on('click',function(){
+		if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
+			preCalculate();
+		}
 		operator = '*';
 		update();
 	 })
 
 	$('#btnMinus').on('click',function(){
-		if(currentText==''){
-			$('#operator').html("&nbsp");
-			currentText = '-'
-		}else{
-			operator = '-';
-			update();
+		if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
+			preCalculate();
+			// alert(currentText);
 		}
-		
+		operator = '-';
+		update();
 	 })
 
 	$('#btnPlus').on('click',function(){
+		if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
+			// alert(operator);
+			// alert('hi if');
+			preCalculate();
+			// alert(currentText);
+		}
+
 		operator = '+';
 		update();
 	 })
 
 	$('#btnEquel').on('click',function(){
 		preCalculate();
-		$('#operator').html("&nbsp");
-		// alert(currentText);
+		$('#operator').html('&nbsp');
+		 operator='';
+		 // alert('operator = '+operator);
+		 // alert(currentText);
 	 })
-
-	// function negativeNum(){
-	// 	$('#operator').html("&nbsp");
-	// 	currentText = '-'
-	// }
 
 	function update(){
 		$('#operator').text(operator);
@@ -107,7 +116,6 @@ $(function(){
 	function preCalculate(){
 		var operateNum = currentText;
 		$('#message').text(calculate(preText, operateNum, operator));
-		// calculate(preText, operateNum, operator)
 	}
 
 	function calculate(numA, numB, operator) {
