@@ -3,6 +3,7 @@ $(function(){
 	var currentText='';
 	var operator='';
 	var preText='';
+	
 
 	$('#btn0').on('click',function(){
 		if(currentText!=''){
