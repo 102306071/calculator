@@ -54,7 +54,6 @@ $(function(){
 				currentText =currentText+'0.';
 				render();
 			}else{
-				alert('hi');
 				currentText =currentText+'.';
 			render();
 			}		
