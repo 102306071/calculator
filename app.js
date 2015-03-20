@@ -49,11 +49,12 @@ $(function(){
 	 })
 
 	$('#btnDot').on('click',function(){
-		if(currentText.indexOf('.'<0)){
+		if(currentText.indexOf('.')<0){
 			if(currentText==''){
 				currentText =currentText+'0.';
 				render();
 			}else{
+				alert('hi');
 				currentText =currentText+'.';
 			render();
 			}		
