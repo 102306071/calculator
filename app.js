@@ -1,7 +1,6 @@
 $(function(){
 
 	var currentText='';
-	var recordText='';
 	var operator='';
 	var preText='';
 
