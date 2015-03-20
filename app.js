@@ -128,6 +128,7 @@ $(function(){
 				result = numA / numB;
 				break;
 			default:
+				return;
 				break;
 		}
 		preText = '';
