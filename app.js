@@ -2,7 +2,7 @@ $(function(){
 
 	var currentText='';
 	var operator='';
-	var preText;
+	var preText='';
 
 	$('#btn0').on('click',function(){
 		currentText =currentText+'0';
@@ -67,8 +67,14 @@ $(function(){
 	 })
 
 	$('#btnMinus').on('click',function(){
-		operator = '-';
-		update();
+		if(currentText==''){
+			$('#operator').html("&nbsp");
+			currentText = '-'
+		}else{
+			operator = '-';
+			update();
+		}
+		
 	 })
 
 	$('#btnPlus').on('click',function(){
@@ -78,9 +84,14 @@ $(function(){
 
 	$('#btnEquel').on('click',function(){
 		preCalculate();
+		$('#operator').html("&nbsp");
+		// alert(currentText);
 	 })
 
-	
+	// function negativeNum(){
+	// 	$('#operator').html("&nbsp");
+	// 	currentText = '-'
+	// }
 
 	function update(){
 		$('#operator').text(operator);
@@ -119,6 +130,8 @@ $(function(){
 			default:
 				break;
 		}
+		preText = '';
+		currentText = result;
 		return result;
 	}
 
