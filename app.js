@@ -57,38 +57,41 @@ $(function(){
 	//運算符號
 
 	$('#btnDiv').on('click',function(){
-		if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
-			preCalculate();
-		}
+		if(currentText!=''&&preText!=''){
+			if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
+				preCalculate();
+			}
+		}	
 		operator = '÷';
 		update();
 	 })
 
 	$('#btnMult').on('click',function(){
-		if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
-			preCalculate();
-		}
+		if(currentText!=''&&preText!=''){
+			if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
+				preCalculate();
+			}
+		}	
 		operator = '*';
 		update();
 	 })
 
 	$('#btnMinus').on('click',function(){
-		if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
-			preCalculate();
-			// alert(currentText);
-		}
+		if(currentText!=''&&preText!=''){
+			if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
+				preCalculate();
+			}
+		}	
 		operator = '-';
 		update();
 	 })
 
 	$('#btnPlus').on('click',function(){
-		if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
-			// alert(operator);
-			// alert('hi if');
-			preCalculate();
-			// alert(currentText);
-		}
-
+		if(currentText!=''&&preText!=''){
+			if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
+				preCalculate();
+			}
+		}	
 		operator = '+';
 		update();
 	 })
@@ -103,7 +106,9 @@ $(function(){
 
 	function update(){
 		$('#operator').text(operator);
-		preText = currentText;
+		if(currentText!=''){
+			preText = currentText;
+		}
 		currentText = '';
 		// $('#message').text(currentText);
 	}
