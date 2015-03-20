@@ -5,8 +5,10 @@ $(function(){
 	var preText='';
 
 	$('#btn0').on('click',function(){
-		currentText =currentText+'0';
-		render();
+		if(currentText!=''){
+			currentText =currentText+'0';
+			render();
+		}
 	 })
 
 	$('#btn1').on('click',function(){
@@ -44,6 +46,16 @@ $(function(){
 	$('#btn9').on('click',function(){
 		currentText =currentText+'9';
 		render();
+	 })
+
+	$('#btnDot').on('click',function(){
+		if(currentText==''){
+			currentText =currentText+'0.';
+			render();
+		}else{
+			currentText =currentText+'.';
+		render();
+		}		
 	 })
 
 	$('#btnClear').on('click',function(){
