@@ -124,8 +124,8 @@ $(function(){
 
 	function calculate(numA, numB, operator) {
 		var result;
-		numA = parseInt(numA,10);
-		numB = parseInt(numB,10);
+		numA = parseFloat(numA,10);
+		numB = parseFloat(numB,10);
 		switch (operator) {
 			case '+':
 				result = numA + numB;
