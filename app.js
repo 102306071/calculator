@@ -49,13 +49,15 @@ $(function(){
 	 })
 
 	$('#btnDot').on('click',function(){
-		if(currentText==''){
-			currentText =currentText+'0.';
+		if(currentText.indexOf('.'<0)){
+			if(currentText==''){
+				currentText =currentText+'0.';
+				render();
+			}else{
+				currentText =currentText+'.';
 			render();
-		}else{
-			currentText =currentText+'.';
-		render();
-		}		
+			}		
+		}
 	 })
 
 	$('#btnClear').on('click',function(){
@@ -66,7 +68,7 @@ $(function(){
 		$('#operator').html("&nbsp");
 	})
 
-	//運算符號
+	//operator
 
 	$('#btnDiv').on('click',function(){
 		if(currentText!=''&&preText!=''){
@@ -156,6 +158,7 @@ $(function(){
 				break;
 		}
 		preText = '';
+		result = (Math.round(result*10000000000))/10000000000;
 		currentText = result;
 		return result;
 	}
