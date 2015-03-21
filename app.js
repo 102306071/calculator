@@ -6,43 +6,73 @@ $(function(){
 	var equal= '';
 
 	$('#btn0').on('click',function(){
-		 if(operator==''&&equal==''){
-		 	// alert('hi');
+		// alert('currentText'+currentText); 
+		// alert('preText'+preText);
+		// alert('operator'+operator);
+		// alert('equal'+equal);
+
+		// if(currentText=='0'){
+		// 	currentText ='0';
+		if(currentText==''&&preText==''&&operator==''&&equal==''||currentText=='0'){
+			// alert('C3');
+			currentText ='0';
+			// render();
+		}else if(currentText!=''&&preText==''&&operator==''&&equal==''){
+			// alert('C4');
+			currentText =currentText+'0';
+			render();
+		}else if(currentText==''&&preText!=''&&operator!=''&&equal==''){
+		 	// alert('C1');
 		 	currentText =currentText+'0';
 			render();
-		 }else if(operator==''&&equal!=''){
-			// alert('hi');
+		}else if(currentText!=''&&preText==''&&operator==''&&equal!=''){
+			// alert('C2');
 			equal='';
 			currentText='0';
 			operator='';
 			render();
 			update();
+			// preText='';
 			$('#operator').html("&nbsp");
-		}else if(currentText!=''){
-			// alert('fuck!!');
+			// alert('AcurrentText='+currentText); 
+			// alert('ApreText='+preText);
+			// alert('Aoperator='+operator);
+			// alert('Aequal='+equal);
+
+		}else if(currentText!=''&&preText!=''&&operator!=''&&equal==''){
+			// alert('hello')
 			currentText =currentText+'0';
 			render();
-		}else if(preText!=''){
-			// alert('hello')
+		}else{
 			currentText =currentText+'0';
 			render();
 		}
 	 })
 
 	$('#btn1').on('click',function(){
-		if(preText==''){
+		if(currentText=='0'){
+			currentText='';
+		}
+
+		if(currentText!=''&&preText==''&&operator==''&&equal!=''){
 			currentText='1';
 			operator='';
 			render();
 			update();
 			$('#operator').html("&nbsp");
 		}
-
+		// alert(currentText);
 		currentText =currentText+'1';
+		// 	alert(currentText);
 		render();
+		// alert('preText'+preText);
 	 })
 	$('#btn2').on('click',function(){
-		if(preText==''){
+		if(currentText=='0'){
+			currentText='';
+		}
+
+		if(currentText!=''&&preText==''&&operator==''&&equal!=''){
 			currentText='2';
 			operator='';
 			render();
@@ -53,7 +83,11 @@ $(function(){
 		render();
 	 })
 	$('#btn3').on('click',function(){
-		if(preText==''){
+		if(currentText=='0'){
+			currentText='';
+		}
+
+		if(currentText!=''&&preText==''&&operator==''&&equal!=''){
 			currentText='3';
 			operator='';
 			render();
@@ -64,7 +98,11 @@ $(function(){
 		render();
 	 })
 	$('#btn4').on('click',function(){
-		if(preText==''){
+		if(currentText=='0'){
+			currentText='';
+		}
+
+		if(currentText!=''&&preText==''&&operator==''&&equal!=''){
 			currentText='4';
 			operator='';
 			render();
@@ -75,7 +113,11 @@ $(function(){
 		render();
 	 })
 	$('#btn5').on('click',function(){
-		if(preText==''){
+		if(currentText=='0'){
+			currentText='';
+		}
+
+		if(currentText!=''&&preText==''&&operator==''&&equal!=''){
 			currentText='5';
 			operator='';
 			render();
@@ -86,7 +128,11 @@ $(function(){
 		render();
 	 })
 	$('#btn6').on('click',function(){
-		if(preText==''){
+		if(currentText=='0'){
+			currentText='';
+		}
+
+		if(currentText!=''&&preText==''&&operator==''&&equal!=''){
 			currentText='6';
 			operator='';
 			render();
@@ -97,7 +143,11 @@ $(function(){
 		render();
 	 })
 	$('#btn7').on('click',function(){
-		if(preText==''){
+		if(currentText=='0'){
+			currentText='';
+		}
+
+		if(currentText!=''&&preText==''&&operator==''&&equal!=''){
 			currentText='7';
 			operator='';
 			render();
@@ -108,7 +158,11 @@ $(function(){
 		render();
 	 })
 	$('#btn8').on('click',function(){
-		if(preText==''){
+		if(currentText=='0'){
+			currentText='';
+		}
+
+		if(currentText!=''&&preText==''&&operator==''&&equal!=''){
 			currentText='8';
 			operator='';
 			render();
@@ -119,7 +173,11 @@ $(function(){
 		render();
 	 })
 	$('#btn9').on('click',function(){
-		if(preText==''){
+		if(currentText=='0'){
+			currentText='';
+		}
+		
+		if(currentText!=''&&preText==''&&operator==''&&equal!=''){
 			currentText='9';
 			operator='';
 			render();
@@ -149,6 +207,8 @@ $(function(){
 		render();
 		update();
 		$('#operator').html("&nbsp");
+		preText='';
+		// alert(preText);
 	})
 
 	//operator
