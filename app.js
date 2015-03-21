@@ -3,11 +3,16 @@ $(function(){
 	var currentText='';
 	var operator='';
 	var preText='';
-
+	var equal= '';
 
 	$('#btn0').on('click',function(){
-		 if(operator==''){
+		 if(operator==''&&equal==''){
+		 	// alert('hi');
+		 	currentText =currentText+'0';
+			render();
+		 }else if(operator==''&&equal!=''){
 			// alert('hi');
+			equal='';
 			currentText='0';
 			operator='';
 			render();
@@ -138,6 +143,7 @@ $(function(){
 	 })
 
 	$('#btnClear').on('click',function(){
+		equal='';
 		currentText='0';
 		operator='';
 		render();
@@ -190,7 +196,8 @@ $(function(){
 		update();
 	 })
 
-	$('#btnEquel').on('click',function(){
+	$('#btnEqual').on('click',function(){
+		equal='true';
 		preCalculate();
 		$('#operator').html('&nbsp');
 		operator='';
