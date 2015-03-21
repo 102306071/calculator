@@ -3,7 +3,7 @@ $(function(){
 	var currentText='';
 	var operator='';
 	var preText='';
-	
+
 
 	$('#btn0').on('click',function(){
 		if(currentText!=''){
@@ -56,7 +56,7 @@ $(function(){
 				render();
 			}else{
 				currentText =currentText+'.';
-			render();
+				render();
 			}		
 		}
 	 })
@@ -92,11 +92,14 @@ $(function(){
 	 })
 
 	$('#btnMinus').on('click',function(){
-		if(currentText!=''&&preText!=''){
+		if (currentText=='') {
+			currentText='0';
+		}else if(currentText!=''&&preText!=''){
 			if(operator==='+'||operator==='-'||operator==='*'||operator==='÷'){
 				preCalculate();
 			}
-		}	
+		}
+		// alert('hi');	
 		operator = '-';
 		update();
 	 })
